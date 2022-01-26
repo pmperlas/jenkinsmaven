@@ -1,4 +1,4 @@
-job('Java Maven App DSL') {
+job('javaappDSL') {
     description('Java Maven App con DSL para el curso de Jenkins')
     scm {
         git('https://github.com/Adastra-THW/jenkinsmaven.git', 'master') { node ->
@@ -17,7 +17,7 @@ job('Java Maven App DSL') {
         }
         shell('''
           echo "Entrega: Desplegando la aplicación" 
-          java -jar "/var/jenkins_home/workspace/javaapp/target/my-app-1.0-SNAPSHOT.jar"
+          java -jar "/var/jenkins_home/workspace/javaappDSL/target/my-app-1.0-SNAPSHOT.jar"
         ''')  
     }
     publishers {
