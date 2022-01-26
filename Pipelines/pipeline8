@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+    parameters {
+        string(name: 'USUARIO', defaultValue: 'Adastra', description: 'Valor de USUARIO')
+
+        booleanParam(name: 'FLAG', defaultValue: true, description: 'Valor boolean')
+
+        choice(name: 'Eleccion', choices: ['A', 'B', 'C'], description: 'Opciones')
+    }
+    stages {
+        stage('Clase de Parametros') {
+            steps {
+                echo "Hola, como estas ${params.USUARIO}"
+
+                echo "FLAG: ${params.FLAG}"
+
+                echo "Eleccion: ${params.Eleccion}"
+            }
+        }
+    }
+}

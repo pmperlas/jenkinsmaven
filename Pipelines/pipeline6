@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+    stages {
+        stage('Ejemplo Username/Password') {
+            environment {
+                CRED_USUARIO = credentials('USUARIO_TESTING1')
+            }
+            steps {
+                sh 'echo "El usuario es $CRED_USUARIO_USR"'
+                sh 'echo "La contraseña es $CRED_USUARIO_PSW"'
+            }
+        }
+    }
+}

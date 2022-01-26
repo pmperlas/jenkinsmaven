@@ -1,0 +1,13 @@
+pipeline {
+    agent any
+    environment { 
+        SECRET_TEXT = credentials('USUARIO_TESTING2')
+    }
+    stages {
+        stage('Ejemplo para Secret Text') {
+            steps {
+                sh 'echo $SECRET_TEXT'
+            }
+        }
+    }
+}
