@@ -24,9 +24,7 @@ pipeline {
 
         stage('Docker Build & Push') {
           steps {
-            script {  
-              docker.build("adastra/mavenapp:latest", ".")
-            }  
+            sh 'docker build -t adastra/mavenapp:latest ../Dockerfile'
           }  
         }
 
