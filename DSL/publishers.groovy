@@ -17,28 +17,11 @@ job('javaappDSL') {
         }
         shell('''
           echo "Entrega: Desplegando la aplicación" 
-          java -jar "/var/jenkins_home/workspace/javaappDSL/target/my-app-1.0-SNAPSHOT.jar"
+          java -jar "/home/curso/.jenkins/workspace/javaappDSL/target/my-app-1.0-SNAPSHOT.jar"
         ''')
     }
     publishers {
         archiveArtifacts('target/*.jar')
         archiveJunit('target/surefire-reports/*.xml')
-	      slackNotifier {
-            notifyAborted(true)
-            notifyEveryFailure(true)
-            notifyNotBuilt(false)
-            notifyUnstable(false)
-            notifyBackToNormal(true)
-            notifySuccess(true)
-            notifyRepeatedFailure(false)
-            startNotification(false)
-            includeTestSummary(false)
-            includeCustomMessage(false)
-            customMessage(null)
-            sendAs(null)
-            commitInfoChoice('NONE')
-            teamDomain(null)
-            authToken(null)
-       }
     }
 }
