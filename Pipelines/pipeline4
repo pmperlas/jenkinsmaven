@@ -5,7 +5,7 @@ pipeline {
             steps {
                 timeout(time: 5, unit: 'SECONDS') {
                     retry(3) {
-                        sh hola.sh
+                        sh /home/curso/hola.sh
                     }
                 }
             }
