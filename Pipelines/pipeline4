@@ -5,7 +5,8 @@ pipeline {
             steps {
                 timeout(time: 5, unit: 'SECONDS') {
                     retry(3) {
-                        sh echo 'hola'
+                        pwd
+                        sh hola.sh
                     }
                 }
             }
