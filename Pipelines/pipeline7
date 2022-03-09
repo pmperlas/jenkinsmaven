@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment { 
-        SECRET_TEXT = credentials('USUARIO_TESTING2')
+        SECRET_TEXT = credentials('SECRETO_TESTING1')
     }
     stages {
         stage('Ejemplo para Secret Text') {
